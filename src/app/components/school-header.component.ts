@@ -28,7 +28,10 @@ import { LanguageService } from '../services/language.service';
           <a href="#news">{{ lang.t('news') }}</a>
         </nav>
         <a class="button button-small nav-contact" href="#contact">{{ lang.t('contactUs') }} <span>↖</span></a>
-        <button class="menu-toggle" type="button" [attr.aria-expanded]="menuOpen" [attr.aria-label]="menuOpen ? lang.t('closeMenu') : lang.t('openMenu')" (click)="menuOpen = !menuOpen">{{ menuOpen ? '×' : '☰' }}</button>
+        <div class="mobile-controls">
+          <button class="mobile-language" type="button" (click)="lang.toggle()">{{ lang.locale() === 'ar' ? 'EN' : 'عربي' }}</button>
+          <button class="menu-toggle" type="button" [attr.aria-expanded]="menuOpen" [attr.aria-label]="menuOpen ? lang.t('closeMenu') : lang.t('openMenu')" (click)="menuOpen = !menuOpen">{{ menuOpen ? '×' : '☰' }}</button>
+        </div>
       </div>
       @if (menuOpen) {
         <div class="mobile-drawer" dir="{{ lang.locale() === 'ar' ? 'rtl' : 'ltr' }}">

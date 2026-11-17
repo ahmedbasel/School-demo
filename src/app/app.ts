@@ -1,12 +1,13 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { SchoolHeaderComponent } from './components/school-header.component';
+import { SchoolHeroComponent } from './components/school-hero.component';
+import { SchoolContentComponent } from './components/school-content.component';
+import { SchoolFooterComponent } from './components/school-footer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [SchoolHeaderComponent, SchoolHeroComponent, SchoolContentComponent, SchoolFooterComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
-export class App {
-  protected readonly title = signal('Demo-school');
-}
+export class App {}
